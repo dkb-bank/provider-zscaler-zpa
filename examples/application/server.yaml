@@ -1,0 +1,13 @@
+---
+apiVersion: application.zscaler-zpa.crossplane.io/v1alpha1
+kind: Server
+metadata:
+  name: example-server
+spec:
+  forProvider:
+    name: SERVER
+    address: "8.8.8.8"
+    # you can only use serverGroupRefs if serverGroup is setup with dynamicDiscovery: false
+    appServerGroupIdRefs:
+      - name: example-servergroup
+    enabled: true

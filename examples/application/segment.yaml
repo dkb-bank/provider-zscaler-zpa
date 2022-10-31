@@ -1,0 +1,18 @@
+---
+apiVersion: application.zscaler-zpa.crossplane.io/v1alpha1
+kind: Segment
+metadata:
+  name: example-application
+spec:
+  forProvider:
+    name: AppSeg_Tenant-a
+    segmentGroupIdRef:
+      name: example-segment
+    serverGroups:
+      - idRefs: 
+          - name: example-servergroup
+    tcpPortRanges:
+      - "8443"
+      - "8443"
+    domainNames:
+      - "test.crossplane.io"

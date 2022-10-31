@@ -9,16 +9,22 @@ import (
 
 	"github.com/upbound/upjet/pkg/controller"
 
-	resource "github.com/upbound/upjet-provider-template/internal/controller/null/resource"
-	providerconfig "github.com/upbound/upjet-provider-template/internal/controller/providerconfig"
+	segment "github.com/haarchri/provider-zscaler-zpa/internal/controller/application/segment"
+	server "github.com/haarchri/provider-zscaler-zpa/internal/controller/application/server"
+	providerconfig "github.com/haarchri/provider-zscaler-zpa/internal/controller/providerconfig"
+	group "github.com/haarchri/provider-zscaler-zpa/internal/controller/segment/group"
+	groupserver "github.com/haarchri/provider-zscaler-zpa/internal/controller/server/group"
 )
 
 // Setup creates all controllers with the supplied logger and adds them to
 // the supplied manager.
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
-		resource.Setup,
+		segment.Setup,
+		server.Setup,
 		providerconfig.Setup,
+		group.Setup,
+		groupserver.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err

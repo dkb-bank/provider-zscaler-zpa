@@ -1,0 +1,9 @@
+---
+apiVersion: segment.zscaler-zpa.crossplane.io/v1alpha1
+kind: Group
+metadata:
+  name: example-segment
+spec:
+  forProvider:
+    name: zscaler-zpa-upjet
+    enabled: true
