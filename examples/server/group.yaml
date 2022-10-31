@@ -1,0 +1,13 @@
+---
+apiVersion: server.zscaler-zpa.crossplane.io/v1alpha1
+kind: Group
+metadata:
+  name: example-servergroup
+spec:
+  forProvider:
+    name: zscaler-zpa-upjet
+    enabled: true
+    dynamicDiscovery: false
+    appConnectorGroups:
+      - id: 
+        - "12346723335233572"

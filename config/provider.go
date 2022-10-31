@@ -8,14 +8,15 @@ import (
 	// Note(turkenh): we are importing this to embed provider schema document
 	_ "embed"
 
+	application "github.com/haarchri/provider-zscaler-zpa/config/application"
+	segment "github.com/haarchri/provider-zscaler-zpa/config/segment"
+	server "github.com/haarchri/provider-zscaler-zpa/config/server"
 	ujconfig "github.com/upbound/upjet/pkg/config"
-
-	"github.com/upbound/upjet-provider-template/config/null"
 )
 
 const (
-	resourcePrefix = "template"
-	modulePath     = "github.com/upbound/upjet-provider-template"
+	resourcePrefix = "zscaler-zpa"
+	modulePath     = "github.com/haarchri/provider-zscaler-zpa"
 )
 
 //go:embed schema.json
@@ -28,13 +29,17 @@ var providerMetadata string
 func GetProvider() *ujconfig.Provider {
 	pc := ujconfig.NewProvider([]byte(providerSchema), resourcePrefix, modulePath, []byte(providerMetadata),
 		ujconfig.WithIncludeList(ExternalNameConfigured()),
+		ujconfig.WithShortName("zscaler-zpa"),
+		ujconfig.WithRootGroup("zscaler-zpa.crossplane.io"),
 		ujconfig.WithDefaultResourceOptions(
 			ExternalNameConfigurations(),
 		))
 
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
-		null.Configure,
+		application.Configure,
+		segment.Configure,
+		server.Configure,
 	} {
 		configure(pc)
 	}

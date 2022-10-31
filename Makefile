@@ -1,17 +1,17 @@
 # ====================================================================================
 # Setup Project
 
-PROJECT_NAME := upjet-provider-template
-PROJECT_REPO := github.com/upbound/$(PROJECT_NAME)
+PROJECT_NAME := provider-zscaler-zpa
+PROJECT_REPO := github.com/haarchri/$(PROJECT_NAME)
 
 export TERRAFORM_VERSION := 1.3.3
 
-export TERRAFORM_PROVIDER_SOURCE := hashicorp/null
-export TERRAFORM_PROVIDER_REPO := https://github.com/hashicorp/terraform-provider-null
-export TERRAFORM_PROVIDER_VERSION := 3.1.0
-export TERRAFORM_PROVIDER_DOWNLOAD_NAME := terraform-provider-null
-export TERRAFORM_NATIVE_PROVIDER_BINARY := terraform-provider-null_v3.1.0_x5
-export TERRAFORM_DOCS_PATH := docs/resources
+export TERRAFORM_PROVIDER_SOURCE := zscaler/zpa
+export TERRAFORM_PROVIDER_REPO := https://github.com/zscaler/terraform-provider-zpa
+export TERRAFORM_PROVIDER_VERSION := 2.4.0
+export TERRAFORM_PROVIDER_DOWNLOAD_NAME := terraform-provider-zpa
+export TERRAFORM_NATIVE_PROVIDER_BINARY := terraform-provider-zpa_2.4.0
+export TERRAFORM_DOCS_PATH := docs/resources/
 
 PLATFORMS ?= linux_amd64 linux_arm64
 
@@ -43,6 +43,7 @@ GOLANGCILINT_VERSION ?= 1.50.0
 GO_STATIC_PACKAGES = $(GO_PROJECT)/cmd/provider $(GO_PROJECT)/cmd/generator
 GO_LDFLAGS += -X $(GO_PROJECT)/internal/version.Version=$(VERSION)
 GO_SUBDIRS += cmd internal apis
+GO111MODULE = on
 -include build/makelib/golang.mk
 
 # ====================================================================================
@@ -63,16 +64,16 @@ IMAGES = $(PROJECT_NAME)
 # ====================================================================================
 # Setup XPKG
 
-XPKG_REG_ORGS ?= xpkg.upbound.io/upbound
+XPKG_REG_ORGS ?= xpkg.upbound.io/crossplane-contrib index.docker.io/crossplanecontrib
 # NOTE(hasheddan): skip promoting on xpkg.upbound.io as channel tags are
 # inferred.
-XPKG_REG_ORGS_NO_PROMOTE ?= xpkg.upbound.io/upbound
+XPKG_REG_ORGS_NO_PROMOTE ?= xpkg.upbound.io/crossplane-contrib
 XPKGS = $(PROJECT_NAME)
 -include build/makelib/xpkg.mk
 
 # NOTE(hasheddan): we force image building to happen prior to xpkg build so that
 # we ensure image is present in daemon.
-xpkg.build.upjet-provider-template: do.build.images
+xpkg.build.provider-pagerduty: do.build.images
 
 # NOTE(hasheddan): we ensure up is installed prior to running platform-specific
 # build steps in parallel to avoid encountering an installation race condition.
@@ -136,6 +137,9 @@ generate.init: $(TERRAFORM_PROVIDER_SCHEMA) pull-docs
 # its location in CI so that we cache between builds.
 go.cachedir:
 	@go env GOCACHE
+
+go.mod.cachedir:
+	@go env GOMODCACHE
 
 # Generate a coverage report for cobertura applying exclusions on
 # - generated file

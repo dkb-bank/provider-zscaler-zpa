@@ -1,4 +1,4 @@
-module github.com/upbound/upjet-provider-template
+module github.com/haarchri/provider-zscaler-zpa
 
 go 1.19
 
