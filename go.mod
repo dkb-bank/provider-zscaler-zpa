@@ -1,4 +1,4 @@
-module github.com/haarchri/provider-zscaler-zpa
+module github.com/dkb-bank/provider-zscaler-zpa
 
 go 1.19
 

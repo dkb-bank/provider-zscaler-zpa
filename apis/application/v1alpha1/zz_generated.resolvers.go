@@ -8,8 +8,8 @@ package v1alpha1
 import (
 	"context"
 	reference "github.com/crossplane/crossplane-runtime/pkg/reference"
-	v1alpha1 "github.com/haarchri/provider-zscaler-zpa/apis/segment/v1alpha1"
-	v1alpha11 "github.com/haarchri/provider-zscaler-zpa/apis/server/v1alpha1"
+	v1alpha1 "github.com/dkb-bank/provider-zscaler-zpa/apis/segment/v1alpha1"
+	v1alpha11 "github.com/dkb-bank/provider-zscaler-zpa/apis/server/v1alpha1"
 	errors "github.com/pkg/errors"
 	client "sigs.k8s.io/controller-runtime/pkg/client"
 )

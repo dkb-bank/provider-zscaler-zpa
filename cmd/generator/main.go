@@ -11,7 +11,7 @@ import (
 
 	"github.com/upbound/upjet/pkg/pipeline"
 
-	"github.com/haarchri/provider-zscaler-zpa/config"
+	"github.com/dkb-bank/provider-zscaler-zpa/config"
 )
 
 func main() {

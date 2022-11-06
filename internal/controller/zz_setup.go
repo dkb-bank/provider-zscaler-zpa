@@ -9,11 +9,11 @@ import (
 
 	"github.com/upbound/upjet/pkg/controller"
 
-	segment "github.com/haarchri/provider-zscaler-zpa/internal/controller/application/segment"
-	server "github.com/haarchri/provider-zscaler-zpa/internal/controller/application/server"
-	providerconfig "github.com/haarchri/provider-zscaler-zpa/internal/controller/providerconfig"
-	group "github.com/haarchri/provider-zscaler-zpa/internal/controller/segment/group"
-	groupserver "github.com/haarchri/provider-zscaler-zpa/internal/controller/server/group"
+	segment "github.com/dkb-bank/provider-zscaler-zpa/internal/controller/application/segment"
+	server "github.com/dkb-bank/provider-zscaler-zpa/internal/controller/application/server"
+	providerconfig "github.com/dkb-bank/provider-zscaler-zpa/internal/controller/providerconfig"
+	group "github.com/dkb-bank/provider-zscaler-zpa/internal/controller/segment/group"
+	groupserver "github.com/dkb-bank/provider-zscaler-zpa/internal/controller/server/group"
 )
 
 // Setup creates all controllers with the supplied logger and adds them to

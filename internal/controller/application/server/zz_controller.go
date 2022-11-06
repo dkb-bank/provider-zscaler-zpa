@@ -18,7 +18,7 @@ import (
 	"github.com/upbound/upjet/pkg/terraform"
 	ctrl "sigs.k8s.io/controller-runtime"
 
-	v1alpha1 "github.com/haarchri/provider-zscaler-zpa/apis/application/v1alpha1"
+	v1alpha1 "github.com/dkb-bank/provider-zscaler-zpa/apis/application/v1alpha1"
 )
 
 // Setup adds a controller that reconciles Server managed resources.

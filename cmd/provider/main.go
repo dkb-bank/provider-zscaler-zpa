@@ -24,12 +24,12 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	"github.com/haarchri/provider-zscaler-zpa/apis"
-	"github.com/haarchri/provider-zscaler-zpa/apis/v1alpha1"
-	"github.com/haarchri/provider-zscaler-zpa/config"
-	"github.com/haarchri/provider-zscaler-zpa/internal/clients"
-	"github.com/haarchri/provider-zscaler-zpa/internal/controller"
-	"github.com/haarchri/provider-zscaler-zpa/internal/features"
+	"github.com/dkb-bank/provider-zscaler-zpa/apis"
+	"github.com/dkb-bank/provider-zscaler-zpa/apis/v1alpha1"
+	"github.com/dkb-bank/provider-zscaler-zpa/config"
+	"github.com/dkb-bank/provider-zscaler-zpa/internal/clients"
+	"github.com/dkb-bank/provider-zscaler-zpa/internal/controller"
+	"github.com/dkb-bank/provider-zscaler-zpa/internal/features"
 )
 
 func main() {

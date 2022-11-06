@@ -69,7 +69,7 @@ type SegmentParameters struct {
 	// +kubebuilder:validation:Optional
 	PassiveHealthEnabled *bool `json:"passiveHealthEnabled,omitempty" tf:"passive_health_enabled,omitempty"`
 
-	// +crossplane:generate:reference:type=github.com/haarchri/provider-zscaler-zpa/apis/segment/v1alpha1.Group
+	// +crossplane:generate:reference:type=github.com/dkb-bank/provider-zscaler-zpa/apis/segment/v1alpha1.Group
 	// +kubebuilder:validation:Optional
 	SegmentGroupID *string `json:"segmentGroupId,omitempty" tf:"segment_group_id,omitempty"`
 
@@ -110,7 +110,7 @@ type ServerGroupsObservation struct {
 
 type ServerGroupsParameters struct {
 
-	// +crossplane:generate:reference:type=github.com/haarchri/provider-zscaler-zpa/apis/server/v1alpha1.Group
+	// +crossplane:generate:reference:type=github.com/dkb-bank/provider-zscaler-zpa/apis/server/v1alpha1.Group
 	// +kubebuilder:validation:Optional
 	ID []*string `json:"id,omitempty" tf:"id,omitempty"`
 
