@@ -3,4 +3,4 @@ kind: Provider
 metadata:
   name: provider-zscaler-zpa
 spec:
-  package: haarchri/provider-zscaler-zpa:v0.1.0
+  package: platformdkbcf/provider-zscaler-zpa:v0.1.0

@@ -8,15 +8,15 @@ import (
 	// Note(turkenh): we are importing this to embed provider schema document
 	_ "embed"
 
-	application "github.com/haarchri/provider-zscaler-zpa/config/application"
-	segment "github.com/haarchri/provider-zscaler-zpa/config/segment"
-	server "github.com/haarchri/provider-zscaler-zpa/config/server"
+	application "github.com/dkb-bank/provider-zscaler-zpa/config/application"
+	segment "github.com/dkb-bank/provider-zscaler-zpa/config/segment"
+	server "github.com/dkb-bank/provider-zscaler-zpa/config/server"
 	ujconfig "github.com/upbound/upjet/pkg/config"
 )
 
 const (
 	resourcePrefix = "zscaler-zpa"
-	modulePath     = "github.com/haarchri/provider-zscaler-zpa"
+	modulePath     = "github.com/dkb-bank/provider-zscaler-zpa"
 )
 
 //go:embed schema.json

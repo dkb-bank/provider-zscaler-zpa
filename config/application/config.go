@@ -8,10 +8,10 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = "application"
 		r.References = config.References{
 			"server_groups.id": {
-				Type: "github.com/haarchri/provider-zscaler-zpa/apis/server/v1alpha1.Group",
+				Type: "github.com/dkb-bank/provider-zscaler-zpa/apis/server/v1alpha1.Group",
 			},
 			"segment_group_id": {
-				Type: "github.com/haarchri/provider-zscaler-zpa/apis/segment/v1alpha1.Group",
+				Type: "github.com/dkb-bank/provider-zscaler-zpa/apis/segment/v1alpha1.Group",
 			},
 		}
 	})
@@ -20,7 +20,7 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = "application"
 		r.References = config.References{
 			"app_server_group_ids": {
-				Type:              "github.com/haarchri/provider-zscaler-zpa/apis/server/v1alpha1.Group",
+				Type:              "github.com/dkb-bank/provider-zscaler-zpa/apis/server/v1alpha1.Group",
 				RefFieldName:      "AppServerGroupIDRefs",
 				SelectorFieldName: "AppServerGroupIDSelector",
 			},

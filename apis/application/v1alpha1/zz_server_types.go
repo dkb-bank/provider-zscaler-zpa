@@ -32,7 +32,7 @@ type ServerParameters struct {
 	AppServerGroupIDSelector *v1.Selector `json:"appServerGroupIdSelector,omitempty" tf:"-"`
 
 	// This field defines the list of server groups IDs.
-	// +crossplane:generate:reference:type=github.com/haarchri/provider-zscaler-zpa/apis/server/v1alpha1.Group
+	// +crossplane:generate:reference:type=github.com/dkb-bank/provider-zscaler-zpa/apis/server/v1alpha1.Group
 	// +crossplane:generate:reference:refFieldName=AppServerGroupIDRefs
 	// +crossplane:generate:reference:selectorFieldName=AppServerGroupIDSelector
 	// +kubebuilder:validation:Optional
